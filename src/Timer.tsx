@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Timer() {
   type TimerState = 'initial' | 'work' | 'break' | 'pausedWork' | 'pausedBreak';
