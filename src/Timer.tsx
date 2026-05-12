@@ -8,6 +8,7 @@ function Timer() {
   const intervalStartTime = useRef(0);
   const intervalTimeLeft = useRef(0);
   const intervalRef = useRef(1);
+  const isRunning = timerState === 'work' || timerState === 'break';
 
   useEffect(() => {
     if (timeLeft === 0) {
@@ -87,13 +88,25 @@ function Timer() {
     <div className="timer">
       <div className="display">{formatTime()}</div>
       <div className="controls">
-        <button onClick={start} className="start-btn">
+        <button
+          style={{ display: isRunning ? 'none' : 'block' }}
+          onClick={start}
+          className="start-btn"
+        >
           Start
         </button>
-        <button onClick={pause} className="pause-btn">
+        <button
+          style={{ display: isRunning ? 'inline-block' : 'none' }}
+          onClick={pause}
+          className="pause-btn"
+        >
           Pause
         </button>
-        <button onClick={skip} className="skip-btn">
+        <button
+          style={{ display: isRunning ? 'inline-block' : 'none' }}
+          onClick={skip}
+          className="skip-btn"
+        >
           Skip
         </button>
       </div>
