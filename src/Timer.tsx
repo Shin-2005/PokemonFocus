@@ -38,11 +38,14 @@ function Timer() {
       intervalTimeLeft.current = timeLeft;
       timerId.current = setInterval(() => {
         setTimeLeft(
-          Math.max(0, Math.floor(
-            intervalTimeLeft.current -
-              (Date.now() - intervalStartTime.current) / 1000
+          Math.max(
+            0,
+            Math.floor(
+              intervalTimeLeft.current -
+                (Date.now() - intervalStartTime.current) / 1000
+            )
           )
-        ));
+        );
       }, 100);
     }
 
