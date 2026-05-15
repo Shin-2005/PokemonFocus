@@ -1,11 +1,16 @@
 import Header from './Header.tsx';
+import Image from './Image.tsx'
 import Timer from './Timer.tsx';
 
 function App() {
   return (
     <>
       <Header />
-      <Timer />
+      <div className="wrapper">
+        <Image />
+        <Timer />
+      </div>
+
     </>
   );
 }
